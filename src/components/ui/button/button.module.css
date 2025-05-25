@@ -1,0 +1,27 @@
+.container {
+  background: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-weight: bold;
+  padding: 8px 16px;
+  border-radius: 4px;
+}
+
+.primary {
+  background-color: var(--color-primary);
+  color: var(--color-text-alt);
+}
+
+.primary:hover {
+  background-color: var(--color-secondary);
+}
+
+.secondary {
+  color: var(--color-secondary);
+}
+
+.secondary:hover {
+  background-color: var(--color-secondary);
+  color: var(--color-text-alt);
+}
