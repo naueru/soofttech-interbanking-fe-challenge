@@ -3,5 +3,7 @@
   background-color: var(--color-bg-main);
   display: flex;
   flex: 1;
+  flex-direction: column;
   justify-content: center;
+  padding: 1rem;
 }
