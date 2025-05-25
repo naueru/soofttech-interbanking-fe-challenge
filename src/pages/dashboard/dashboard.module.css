@@ -1,0 +1,32 @@
+.container {
+  background-color: var(--color-background);
+  border-radius: var(--border-radius);
+  border: var(--primary-border);
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  max-width: var(--screens-max-width);
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.add {
+  background-color: var(--color-accent);
+  border-radius: 50%;
+  border: none;
+  bottom: 1rem;
+  color: var(--color-text-alt);
+  cursor: pointer;
+  font-size: 24px;
+  height: 50px;
+  outline: none;
+  position: absolute;
+  right: 1rem;
+  width: 50px;
+}
+
+.add:hover {
+  background-color: var(--color-secondary);
+}
