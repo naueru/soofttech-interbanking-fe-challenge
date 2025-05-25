@@ -1,5 +1,7 @@
-// Styles
+// Types
 import type { FC } from "react";
+
+// Styles
 import styles from "./card.module.css";
 
 export type TCardProps = {
