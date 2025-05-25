@@ -1,0 +1,35 @@
+.container {
+  align-items: center;
+  background-color: var(--color-bg-header-footer);
+  display: flex;
+  height: 100px;
+  justify-content: center;
+  width: 100%;
+}
+
+.navigation {
+  align-items: center;
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  max-width: 1200px;
+  width: 100%;
+}
+
+.description {
+  align-items: center;
+  color: var(--color-header-footer-text);
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+}
+
+.linkText {
+  align-items: center;
+  color: var(--color-header-footer-text-alt);
+  display: flex;
+  font-weight: bold;
+  gap: 8px;
+  justify-content: center;
+  text-decoration: underline;
+}
