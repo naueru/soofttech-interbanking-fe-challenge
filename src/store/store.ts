@@ -10,7 +10,7 @@ export interface IStore {
   deletePhrase: (index: number) => void;
 }
 
-const useStore = create<IStore>((set) => ({
+const usePhrasesStore = create<IStore>((set) => ({
   phrases: INITIAL_STATE,
   addPhrase: (newPhrase: string) =>
     set((state) => ({ phrases: [...state.phrases, newPhrase] })),
@@ -20,4 +20,4 @@ const useStore = create<IStore>((set) => ({
     })),
 }));
 
-export default useStore;
+export default usePhrasesStore;
