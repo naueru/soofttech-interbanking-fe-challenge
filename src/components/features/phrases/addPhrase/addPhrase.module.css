@@ -1,0 +1,18 @@
+.add {
+  background-color: var(--color-accent);
+  border-radius: 50%;
+  border: none;
+  bottom: 1rem;
+  color: var(--color-text-alt);
+  cursor: pointer;
+  font-size: 24px;
+  height: 50px;
+  outline: none;
+  position: absolute;
+  right: 1rem;
+  width: 50px;
+}
+
+.add:hover {
+  background-color: var(--color-secondary);
+}
