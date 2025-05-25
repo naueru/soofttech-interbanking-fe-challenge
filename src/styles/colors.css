@@ -1,0 +1,15 @@
+:root {
+  --color-bg-header-footer: #333333;
+  --color-header-footer-text: #ffffff;
+  --color-header-footer-text-alt: #fd6503;
+  --color-bg-main: #ececec;
+
+  --color-primary: #333333;
+  --color-secondary: #fd6503;
+  --color-accent: #17a2b8;
+  --color-text: #333333;
+  --color-background: #fdfefe;
+  --color-success: #28b463;
+  --color-error: #e74c3c;
+  --color-warning: #f39c12;
+}
