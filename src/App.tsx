@@ -3,13 +3,13 @@ import Footer from "./components/layout/footer/Footer";
 import Header from "./components/layout/header/header";
 
 // Styles
-import "./App.css";
+import styles from "./app.module.css";
 
 function App() {
   return (
     <>
       <Header />
-      <p>App component</p>
+      <main className={styles.mainSection}>App component</main>
       <Footer />
     </>
   );
