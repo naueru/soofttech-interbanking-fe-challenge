@@ -1,18 +1,16 @@
 // Components
-import CardsGrid from "../../components/shared/cardsGrid/CardsGrid";
-import useStore from "../../store/store";
+import AddPhrase from "../../components/features/phrases/addPhrase/AddPhrase";
+import CardsGrid from "../../components/features/phrases/cardsGrid/CardsGrid";
 
 // Styles
 import styles from "./dashboard.module.css";
 
 const Dashboard = () => {
-  const { phrases, addPhrase, deletePhrase } = useStore();
   return (
     <section className={styles.container}>
-      <CardsGrid phrases={phrases} onDelete={deletePhrase} />
-      <button onClick={() => addPhrase("Test")} className={styles.add}>
-        +
-      </button>
+      <CardsGrid />
+
+      <AddPhrase />
     </section>
   );
 };
