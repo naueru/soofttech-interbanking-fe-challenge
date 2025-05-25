@@ -1,0 +1,20 @@
+.container {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  text-decoration: none;
+}
+
+.inverted {
+  filter: invert(100%);
+}
+
+.legend {
+  color: var(--color-header-footer-text);
+  font-size: 20px;
+  font-weight: bold;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+}
