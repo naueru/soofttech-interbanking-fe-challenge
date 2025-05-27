@@ -1,5 +1,5 @@
 export const INITIAL_STATE = [
-  "Lorem ipsum dolor sit amet, con.",
-  "Consectetur adipiscing elit, sed do eiusmod tempor.",
-  "Ut enim ad minim veniam, quis nostrud.",
+  "Add a new phrase.",
+  "Try deleting phrases and filter in the search bar.",
+  "Contact your new developer https://github.com/naueru/ ;)",
 ];

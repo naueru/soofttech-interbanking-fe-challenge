@@ -1,32 +1,48 @@
 // Router
-import { Route, Routes } from "react-router";
+import { createBrowserRouter, Outlet, RouterProvider } from "react-router";
 
-// Components
+// Layout Components
 import Footer from "./components/layout/footer/Footer";
 import Header from "./components/layout/header/header";
+
+// Pages
 import Dashboard from "./pages/dashboard/Dashboard";
+import NotFound from "./pages/notFound/NotFound";
 
 // Styles
 import styles from "./app.module.css";
 
-const Main = () => {
-  return (
-    <main className={styles.mainSection}>
-      <Dashboard />
-    </main>
-  );
-};
-
-function App() {
+const MainLayout = () => {
   return (
     <>
       <Header />
-      <Routes>
-        <Route index element={<Main />} />
-      </Routes>
+      <main className={styles.mainSection}>
+        <Outlet />
+      </main>
       <Footer />
     </>
   );
+};
+
+const router = createBrowserRouter([
+  {
+    element: <MainLayout />,
+    children: [
+      {
+        path: "/",
+        element: <Dashboard />,
+        errorElement: <NotFound />,
+      },
+      {
+        path: "/*",
+        element: <NotFound />,
+      },
+    ],
+  },
+]);
+
+function App() {
+  return <RouterProvider router={router} />;
 }
 
 export default App;
