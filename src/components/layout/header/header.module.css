@@ -19,8 +19,18 @@
   align-items: center;
   display: flex;
   flex: 1;
+  gap: 2rem;
   justify-content: space-between;
   width: 100%;
+}
+
+.navigationListItem {
+  display: flex;
+}
+
+.navigationListItem:not(:first-child):not(:last-child) {
+  flex: 1;
+  justify-content: center;
 }
 
 .icon {
