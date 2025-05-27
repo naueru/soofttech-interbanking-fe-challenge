@@ -20,7 +20,7 @@ const Modal: FC<TModalProps> = ({ isOpen, handleClose, children }) => {
   if (!isOpen || !portal) return null;
 
   return createPortal(
-    <div className={styles.container} onClick={handleClose}>
+    <div data-testid="modal" className={styles.container} onClick={handleClose}>
       <div className={styles.content} onClick={(e) => e.stopPropagation()}>
         <Button secondary onClick={handleClose} className={styles.close}>
           X

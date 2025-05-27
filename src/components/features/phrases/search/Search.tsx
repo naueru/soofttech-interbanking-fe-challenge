@@ -3,7 +3,7 @@ import { useEffect, useRef } from "react";
 import { useSearchParams } from "react-router";
 
 // Custom Hooks
-import useDebouncedState from "../../../../hooks/useDebounceState";
+import useDebouncedState from "../../../../hooks/useDebouncedState";
 
 // Components
 import Button from "../../../ui/button/Button";
@@ -16,7 +16,7 @@ import styles from "./search.module.css";
 
 const Search = () => {
   const [searchParams, setSearchParams] = useSearchParams();
-  const [search, setSearch] = useDebouncedState(
+  const [filter, setFilter] = useDebouncedState(
     searchParams.get("search") || ""
   );
 
@@ -24,15 +24,15 @@ const Search = () => {
 
   const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
     e.preventDefault();
-    setSearch(e.target.value);
+    setFilter(e.target.value);
   };
 
   useEffect(() => {
-    setSearchParams(search ? { search } : {});
-  }, [search, setSearchParams]);
+    setSearchParams(filter ? { search: filter } : {});
+  }, [filter, setSearchParams]);
 
   const handleClear = () => {
-    setSearch("");
+    setFilter("");
     if (inputRef.current) inputRef.current.value = "";
   };
 
@@ -40,7 +40,7 @@ const Search = () => {
     <div className={styles.container}>
       <input
         ref={inputRef}
-        defaultValue={search}
+        defaultValue={filter}
         placeholder="Search phrase..."
         onChange={handleInputChange}
         className={styles.input}
