@@ -1,0 +1,31 @@
+.container {
+  background-color: var(--color-modal-background);
+  border-radius: 16px;
+  display: flex;
+  padding: 8px 16px;
+}
+
+.input {
+  border: none;
+  color: var(--color-text);
+  outline: none;
+}
+
+.icon {
+  background-color: transparent;
+  background-image: url("../../../../assets/search.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  border: none;
+  display: flex;
+  height: 15px;
+  opacity: 50%;
+  outline: none;
+  width: 15px;
+}
+
+.container:has(.input:not(:placeholder-shown)) > .icon {
+  background-image: url("/src/assets/trash.svg");
+  cursor: pointer;
+}
