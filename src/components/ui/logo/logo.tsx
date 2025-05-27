@@ -19,6 +19,9 @@ const Logo: FC<TLogo> = ({
 }) => {
   return (
     <svg
+      data-testid="logo"
+      data-size-factor={sizeFactor}
+      data-color={color}
       width={`${width * sizeFactor}`}
       height={`${height * sizeFactor}`}
       viewBox="0 0 18.520833 9.53135"
