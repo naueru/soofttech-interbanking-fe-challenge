@@ -14,7 +14,6 @@
 .content {
   background: var(--color-modal-background);
   border-radius: 8px;
-  box-shadow: var(--shadow);
   max-height: 80vh;
   max-width: 600px;
   overflow-y: auto;
@@ -25,10 +24,10 @@
 
 .close {
   align-items: center;
-  background-color: var(--color-primary);
+  background: none;
   border-radius: 50%;
   border: none;
-  color: var(--color-text-alt);
+  color: var(--color-text);
   cursor: pointer;
   display: flex;
   font-size: 1rem;
