@@ -1,8 +1,7 @@
 // Hooks
-import { useState } from "react";
-
-// Store
-import usePhrasesStore from "../../../../store/store";
+import { useMemo, useState } from "react";
+import { useSearchParams } from "react-router";
+import useParsedPhrases from "../../../../hooks/useParsedPhrases";
 
 // Components
 import ConfirmationDialog from "../../../ui/confirmationDialog/ConfirmationDialog";
@@ -10,15 +9,14 @@ import Card from "./card/Card";
 
 // Styles
 import styles from "./cardsGrid.module.css";
-import { useShallow } from "zustand/shallow";
 
 const CardsGrid = () => {
-  const { phrases, deletePhrase } = usePhrasesStore(
-    useShallow((state) => ({
-      phrases: state.phrases,
-      deletePhrase: state.deletePhrase,
-    }))
-  );
+  const [searchParams] = useSearchParams();
+
+  const searchQuery = searchParams.get("search") || "";
+
+  const { phrases, deletePhrase } = useParsedPhrases();
+
   const [isConfirmationOpen, setIsConfirmationOpen] = useState(false);
   const [cardToDelete, setCardToDelete] = useState<number | null>(null);
 
@@ -40,12 +38,23 @@ const CardsGrid = () => {
     setIsConfirmationOpen(true);
   };
 
+  const filteredPhrases = useMemo(() => {
+    return searchQuery
+      ? phrases.filter((item) =>
+          item.phrase.toLowerCase().includes(searchQuery.toLowerCase())
+        )
+      : phrases;
+  }, [searchQuery, phrases]);
+
   return (
     <>
       <ul className={styles.container}>
-        {phrases.map((phrase, index) => (
-          <li key={`grid_cell_${index}`}>
-            <Card phrase={phrase} onDelete={() => handleDelete(index)} />
+        {filteredPhrases.map((item) => (
+          <li key={`grid_cell_${item.index}`}>
+            <Card
+              phrase={item.phrase}
+              onDelete={() => handleDelete(item.index)}
+            />
           </li>
         ))}
       </ul>
