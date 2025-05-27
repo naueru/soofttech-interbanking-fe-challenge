@@ -1,9 +1,11 @@
 .container {
   align-items: center;
   background-color: var(--color-bg-header-footer);
+  box-sizing: border-box;
   display: flex;
   height: 100px;
   justify-content: center;
+  padding-inline: 1rem;
   width: 100%;
 }
 
