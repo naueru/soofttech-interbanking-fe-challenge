@@ -19,7 +19,7 @@ export type TBrandingProps = {
 
 const Branding: FC<TBrandingProps> = ({ inverted, small, label, alt }) => {
   return (
-    <div className={styles.container}>
+    <span className={styles.container}>
       <Logo
         sizeFactor={small ? 0.6 : 1}
         color={alt ? COLORS.LOGO_ALT : COLORS.LOGO}
@@ -29,7 +29,7 @@ const Branding: FC<TBrandingProps> = ({ inverted, small, label, alt }) => {
           Tech
         </p>
       ) : null}
-    </div>
+    </span>
   );
 };
 

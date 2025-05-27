@@ -1,4 +1,5 @@
 // Components
+import Search from "../../features/phrases/search/Search";
 import Branding from "../../ui/branding/Branding";
 import Link from "../../ui/link/Link";
 
@@ -14,6 +15,9 @@ const Header = () => {
             <Link to="/" self>
               <Branding label />
             </Link>
+          </li>
+          <li>
+            <Search />
           </li>
           <li>
             <Link to="https://github.com/naueru/soofttech-interbanking-fe-challenge">
