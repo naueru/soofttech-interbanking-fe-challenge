@@ -1,26 +1,27 @@
+// Components
+import { Link as RouterLink } from "react-router";
+
 // Types
-import type { FC, PropsWithChildren } from "react";
+import type { FC } from "react";
+import type { LinkProps } from "react-router";
 
 // Styles
 import styles from "./link.module.css";
 
-export type TLink = {
-  to: string;
+export type TLinkProps = {
   self?: boolean;
-  className?: string;
-} & PropsWithChildren;
+} & LinkProps;
 
-const Link: FC<TLink> = ({ children, to, self, className = "", ...rest }) => {
+const Link: FC<TLinkProps> = ({ children, self, ...rest }) => {
   return (
-    <a
-      className={`${styles.container} ${className}`}
-      href={to}
+    <RouterLink
+      className={`${styles.container}`}
       target={self ? "_self" : "_blank"}
       rel={self ? "" : "noopener noreferrer"}
       {...rest}
     >
       {children}
-    </a>
+    </RouterLink>
   );
 };
 
