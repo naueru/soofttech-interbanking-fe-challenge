@@ -11,15 +11,15 @@ const Header = () => {
     <header className={styles.container}>
       <nav className={styles.navigation}>
         <ul className={styles.navigationList}>
-          <li>
-            <Link to="/" self>
+          <li className={styles.navigationListItem}>
+            <Link reloadDocument to="/" self>
               <Branding label />
             </Link>
           </li>
-          <li>
+          <li className={styles.navigationListItem}>
             <Search />
           </li>
-          <li>
+          <li className={styles.navigationListItem}>
             <Link to="https://github.com/naueru/soofttech-interbanking-fe-challenge">
               <div className={styles.icon} />
             </Link>
