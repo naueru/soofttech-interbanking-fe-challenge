@@ -9,6 +9,7 @@ import Card from "./card/Card";
 
 // Styles
 import styles from "./cardsGrid.module.css";
+import Headline from "../../../ui/headline/Headline";
 
 const CardsGrid = () => {
   const [searchParams] = useSearchParams();
@@ -48,16 +49,24 @@ const CardsGrid = () => {
 
   return (
     <>
-      <ul className={styles.container}>
-        {filteredPhrases.map((item) => (
-          <li key={`grid_cell_${item.index}`}>
-            <Card
-              phrase={item.phrase}
-              onDelete={() => handleDelete(item.index)}
-            />
-          </li>
-        ))}
-      </ul>
+      {filteredPhrases.length ? (
+        <ul className={styles.container}>
+          {filteredPhrases.map((item) => (
+            <li key={`grid_cell_${item.index}`}>
+              <Card
+                phrase={item.phrase}
+                onDelete={() => handleDelete(item.index)}
+              />
+            </li>
+          ))}
+        </ul>
+      ) : (
+        <div className={styles.emptyContainer}>
+          <Headline>
+            There are no phrases yet, hit the plus button and start typing!
+          </Headline>
+        </div>
+      )}
       <ConfirmationDialog
         isOpen={isConfirmationOpen}
         onCancel={handleCancel}
