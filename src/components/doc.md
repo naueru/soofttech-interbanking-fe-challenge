@@ -25,3 +25,6 @@ This folder contains components that encapsulate specific functionalities or bus
 
 - `Cards`:
   I decided to give stiles similar to post-it.
+
+- `Styles`:
+  Regarding of styles I choosed the mobile first, variables for colors and some constants like shadows and CSS modules since the app is quite small.
