@@ -18,16 +18,28 @@
 }
 
 .navigationList {
-  align-items: center;
-  display: flex;
-  flex: 1;
-  gap: 2rem;
-  justify-content: space-between;
+  display: grid;
+  gap: 4px;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 50px 35px;
+  margin: 0;
   width: 100%;
 }
 
 .navigationListItem {
+  align-items: center;
   display: flex;
+}
+
+.navigationListItem:last-child {
+  justify-content: end;
+}
+
+.navigationListItem:not(:first-child):not(:last-child) {
+  grid-column-end: 3;
+  grid-column-start: 1;
+  grid-row-start: 2;
+  justify-content: center;
 }
 
 .navigationListItem:not(:first-child):not(:last-child) {
@@ -40,9 +52,25 @@
   background-image: url("../../../assets/Octicons-mark-github-w.svg");
   background-position: center;
   background-repeat: no-repeat;
-  background-size: 40px;
+  background-size: 34px;
   display: flex;
-  height: 40px;
+  height: 36px;
   justify-content: center;
-  width: 40px;
+  width: 36px;
+}
+
+@media (min-width: 500px) {
+  .navigationList {
+    align-items: initial;
+    display: flex;
+    flex: 1;
+    gap: 2rem;
+    justify-content: space-between;
+  }
+
+  .icon {
+    background-size: 40px;
+    height: 40px;
+    width: 40px;
+  }
 }

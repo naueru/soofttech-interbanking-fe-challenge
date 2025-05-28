@@ -7,10 +7,10 @@ import usePhrasesStore from "../../../../store/store";
 // Components
 import Button from "../../../ui/button/Button";
 import Modal from "../../../ui/modal/Modal";
+import Headline from "../../../ui/headline/Headline";
 
 // Styles
 import styles from "./addPhraseModal.module.css";
-import Headline from "../../../ui/headline/Headline";
 
 export type TAddPhraseModalProps = {
   isOpen: boolean;
@@ -36,8 +36,8 @@ const AddPhraseModal: FC<TAddPhraseModalProps> = ({
   return (
     <Modal isOpen={isOpen} handleClose={handleClose}>
       <form onSubmit={handleSubmit} className={styles.container}>
-        <Headline>New Phrase</Headline>
-        <label htmlFor="name">Phrase</label>
+        <Headline>Add Phrase</Headline>
+        <label htmlFor="name">Type the phrase you want to add</label>
         <textarea
           name="phrase"
           placeholder="Add a new phrase..."
@@ -46,7 +46,9 @@ const AddPhraseModal: FC<TAddPhraseModalProps> = ({
         ></textarea>
         <div className={styles.actions}>
           <Button>Confirm</Button>
-          <Button secondary>Cancel</Button>
+          <Button secondary onClick={handleClose}>
+            Cancel
+          </Button>
         </div>
       </form>
     </Modal>
