@@ -20,6 +20,7 @@
   align-items: center;
   color: var(--color-header-footer-text);
   display: flex;
+  flex-direction: column;
   gap: 8px;
   justify-content: center;
 }
@@ -32,4 +33,10 @@
   gap: 8px;
   justify-content: center;
   text-decoration: underline;
+}
+
+@media (min-width: 500px) {
+  .description {
+    flex-direction: row;
+  }
 }
