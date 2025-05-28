@@ -21,6 +21,7 @@ const Branding: FC<TBrandingProps> = ({ inverted, small, label, alt }) => {
   return (
     <span className={styles.container}>
       <Logo
+        className={styles.logo}
         sizeFactor={small ? 0.6 : 1}
         color={alt ? COLORS.LOGO_ALT : COLORS.LOGO}
       />
