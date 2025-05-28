@@ -5,6 +5,7 @@ import type { FC } from "react";
 import { COLORS } from "../../../constants/colors";
 
 export type TLogo = {
+  className?: string;
   color?: string;
   width?: number;
   height?: number;
@@ -16,9 +17,11 @@ const Logo: FC<TLogo> = ({
   width = 70,
   height = 36.024,
   sizeFactor = 1,
+  className = "",
 }) => {
   return (
     <svg
+      className={className}
       data-testid="logo"
       data-size-factor={sizeFactor}
       data-color={color}
